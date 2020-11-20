@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_background/app_retain_widget.dart';
 import 'package:flutter_background/background_main.dart';
 import 'package:flutter_background/counter_service.dart';
+import 'package:flutter_background/bluetooth_service.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +14,7 @@ void main() {
   var callbackHandle = PluginUtilities.getCallbackHandle(backgroundMain);
   channel.invokeMethod('startService', callbackHandle.toRawHandle());
 
-  CounterService.instance().startCounting();
+  BlueToothService.instance().startCountingBlue();
 }
 
 class MyApp extends StatelessWidget {
